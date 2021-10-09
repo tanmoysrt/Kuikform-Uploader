@@ -1,0 +1,20 @@
+sudo sed -i 's/SELINUX=.*/SELINUX=permissive/' /etc/selinux/config
+sudo reboot
+curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
+sudo yum install epel-release -y
+sudo yum install git wget nano nginx nodejs lsof -y
+sudo yum install psmisc
+ssh-keygen
+Add the public key in github rep
+Clone repo
+npm install
+sudo npm install pm2 -g
+sudo pm2 startup
+pm2 startup systemd
+sudo pm2 start app.js
+pm2 save 
+sudo nano conf.d/app.conf
+sudo systemctl start nginx
+sudo systemctl enable nginx
+
+SSL : https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-centos-7
